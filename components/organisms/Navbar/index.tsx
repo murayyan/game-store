@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Menu from "./Menu";
-import Auth from "./Auth";
 
 export default function Navbar() {
   return (

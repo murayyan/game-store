@@ -5,7 +5,7 @@ export default function member() {
   return (
     <>
       <section className="overview overflow-auto">
-        <SideBar />
+        <SideBar activeMenu="overview" />
         <Overview />
       </section>
     </>

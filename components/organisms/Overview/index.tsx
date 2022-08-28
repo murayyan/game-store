@@ -1,6 +1,6 @@
 import React from "react";
+import TableRow from "../../molecules/TableRow";
 import Category from "./Category";
-import TableRow from "./TableRow";
 
 export default function Overview() {
   return (
@@ -52,6 +52,7 @@ export default function Overview() {
                   price={15000}
                   status={"Pending"}
                   image={"overview-1"}
+                  tableType="overview"
                 />
                 <TableRow
                   title={"Call of Duty:Modern"}
@@ -60,6 +61,7 @@ export default function Overview() {
                   price={15000}
                   status={"Success"}
                   image={"overview-2"}
+                  tableType="overview"
                 />
                 <TableRow
                   title={"Clash of Clans"}
@@ -68,6 +70,7 @@ export default function Overview() {
                   price={15000}
                   status={"Success"}
                   image={"overview-3"}
+                  tableType="overview"
                 />
                 <TableRow
                   title={"The Royal Game"}
@@ -76,6 +79,7 @@ export default function Overview() {
                   price={15000}
                   status={"Failed"}
                   image={"overview-4"}
+                  tableType="overview"
                 />
               </tbody>
             </table>

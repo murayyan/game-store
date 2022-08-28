@@ -1,5 +1,5 @@
-import React from "react";
 import cx from "classnames";
+import Link from "next/link";
 
 interface TableRowProps {
   title: string;
@@ -8,17 +8,25 @@ interface TableRowProps {
   price: number;
   status: "Pending" | "Success" | "Failed";
   image: string;
+  tableType: "overview" | "transactions";
 }
 export default function TableRow(props: TableRowProps) {
-  const { title, category, amount, price, status, image } = props;
+  const { title, category, amount, price, status, image, tableType } = props;
   const statusClass = cx({
     "float-start icon-status": true,
-    pending: status === "Pending",
-    success: status === "Success",
-    failed: status === "Failed",
+    pending: status.toLowerCase() === "pending",
+    success: status.toLowerCase() === "success",
+    failed: status.toLowerCase() === "failed",
   });
+  const action = (
+    <td>
+      <Link href="/member/transactions/detail">
+        <a className="btn btn-status rounded-pill text-sm">Details</a>
+      </Link>
+    </td>
+  );
   return (
-    <tr className="align-middle">
+    <tr data-category={status} className="align-middle">
       <th scope="row">
         <img
           className="float-start me-3 mb-lg-0 mb-3"
@@ -50,6 +58,7 @@ export default function TableRow(props: TableRowProps) {
           </p>
         </div>
       </td>
+      {tableType === "transactions" ? action : <></>}
     </tr>
   );
 }
